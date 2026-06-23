@@ -1,0 +1,169 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0c10; /* Base background tetep hitam pekat */
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* KUSTOM BACKGROUND OVERLAY */
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* GANTI URL DI BAWAH INI PAKE LINK GAMBAR LU (Bisa file lokal/online) */
+    background-image: url('https://i.pinimg.com/736x/6a/09/bb/6a09bbf8119a79288e7069a9f07b115c.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2; /* Mengatur transparansi gambar (0.1 - 1.0) */
+    filter: blur(8px); /* Mengatur tingkat keburaman gambar */
+    z-index: 0; /* Di paling belakang */
+    pointer-events: none; /* Biar ga ngeganggu klik di layar */
+}
+
+/* Container & Profile */
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 30px 24px;
+    text-align: center;
+    z-index: 5;
+    background: rgba(20, 24, 33, 0.7); /* Dibuat sedikit lebih tebal biar kontras */
+    border: 1px solid rgba(69, 243, 255, 0.15); 
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.profile h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #8f9cae; 
+    margin-bottom: 30px;
+}
+
+/* Social Links List */
+.links-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.btn-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.25s ease;
+    background-color: #151a22; 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Accent Warna di Border Kiri */
+.btn-link.instagram { border-left: 4px solid #e1306c; }
+.btn-link.twitch { border-left: 4px solid #9146ff; }
+.btn-link.youtube { border-left: 4px solid #ff0000; }
+.btn-link.steam { border-left: 4px solid #00adee; }
+
+/* HOVER EFFECT: Glow Biru Neon + Garis Warna Maju ke Kanan */
+.btn-link:hover {
+    transform: translateY(-3px);
+    background-color: #1a222d;
+    border-color: #45f3ff; /* Border luar ganti biru neon */
+    
+    /* --- INI YANG BIKIN GARIS WARNA MAJU & TEKS KEDORONG KE KANAN --- */
+    border-left-width: 17px; /* Tebal garis warna kiri nambah dari 4px jadi 10px */
+    /* Efek Glow */
+    box-shadow: 0 0 15px rgba(69, 243, 255, 0.6), 
+                0 0 30px rgba(69, 243, 255, 0.3); 
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); 
+}
+
+/* Klik Effect */
+.btn-link:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0 8px rgba(69, 243, 255, 0.5);
+}
+
+/* Footer Styling */
+.footer {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    gap: 20px;
+    font-size: 0.75rem;
+    z-index: 5;
+}
+.footer a {
+    color: #4a5568;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer a:hover { 
+    color: #45f3ff; 
+}
+
+/* --- ANIMASI SALJU JATOH (CSS ONLY) --- */
+.snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    position: fixed;
+    top: -10%;
+    z-index: 2; /* Ditaruh di atas background overlay */
+    user-select: none;
+    cursor: default;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    opacity: 0.6;
+}
+
+/* Variasi posisi, delay, dan ukuran salju */
+.snowflake:nth-of-type(1) { left: 10%; animation-delay: 0s, 0s; }
+.snowflake:nth-of-type(2) { left: 25%; animation-delay: 1.5s, 1s; font-size: 0.8em; }
+.snowflake:nth-of-type(3) { left: 40%; animation-delay: 6s, 0.5s; font-size: 1.1em; }
+.snowflake:nth-of-type(4) { left: 55%; animation-delay: 3.5s, 2s; }
+.snowflake:nth-of-type(5) { left: 70%; animation-delay: 2s, 1.5s; font-size: 0.7em; }
+.snowflake:nth-of-type(6) { left: 80%; animation-delay: 8s, 3s; font-size: 1.3em; }
+.snowflake:nth-of-type(7) { left: 90%; animation-delay: 5s, 2s; font-size: 0.9em; }
+.snowflake:nth-of-type(8) { left: 95%; animation-delay: 7s, 1s; }
+.snowflake:nth-of-type(9) { left: 15%; animation-delay: 4s, 0s; }
+.snowflake:nth-of-type(10) { left: 65%; animation-delay: 9s, 2.5s; font-size: 1em; }
+
+@keyframes snowflakes-fall {
+    0% { top: -10%; }
+    100% { top: 100%; }
+}
+@keyframes snowflakes-shake {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(50px); }
+}
