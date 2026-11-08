@@ -1,4 +1,4 @@
-/* Reset & Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #0b0c10; /* Base background tetep hitam pekat */
+    background-color: #0b0c10;
     color: #ffffff;
     min-height: 100vh;
     display: flex;
@@ -17,32 +17,32 @@ body {
     position: relative;
 }
 
-/* KUSTOM BACKGROUND OVERLAY */
+
 .bg-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* GANTI URL DI BAWAH INI PAKE LINK GAMBAR LU (Bisa file lokal/online) */
+
     background-image: url('https://i.pinimg.com/736x/6a/09/bb/6a09bbf8119a79288e7069a9f07b115c.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.2; /* Mengatur transparansi gambar (0.1 - 1.0) */
-    filter: blur(8px); /* Mengatur tingkat keburaman gambar */
-    z-index: 0; /* Di paling belakang */
-    pointer-events: none; /* Biar ga ngeganggu klik di layar */
+    opacity: 0.2; 
+    filter: blur(8px);
+    z-index: 0; 
+    pointer-events: none; 
 }
 
-/* Container & Profile */
+
 .container {
     width: 100%;
     max-width: 450px;
     padding: 30px 24px;
     text-align: center;
     z-index: 5;
-    background: rgba(20, 24, 33, 0.7); /* Dibuat sedikit lebih tebal biar kontras */
+    background: rgba(20, 24, 33, 0.7); 
     border: 1px solid rgba(69, 243, 255, 0.15); 
     border-radius: 20px;
     backdrop-filter: blur(10px);
@@ -62,7 +62,7 @@ body {
     margin-bottom: 30px;
 }
 
-/* Social Links List */
+
 .links-wrapper {
     display: flex;
     flex-direction: column;
@@ -85,33 +85,33 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Accent Warna di Border Kiri */
+
 .btn-link.instagram { border-left: 4px solid #e1306c; }
 .btn-link.discord { border-left: 4px solid #9146ff; }
 .btn-link.youtube { border-left: 4px solid #ff0000; }
 .btn-link.steam { border-left: 4px solid #00adee; }
 
-/* HOVER EFFECT: Glow Biru Neon + Garis Warna Maju ke Kanan */
+
 .btn-link:hover {
     transform: translateY(-3px);
     background-color: #1a222d;
-    border-color: #45f3ff; /* Border luar ganti biru neon */
+    border-color: #45f3ff;
     
-    /* --- INI YANG BIKIN GARIS WARNA MAJU & TEKS KEDORONG KE KANAN --- */
-    border-left-width: 17px; /* Tebal garis warna kiri nambah dari 4px jadi 10px */
-    /* Efek Glow */
+   
+    border-left-width: 17px;
+
     box-shadow: 0 0 15px rgba(69, 243, 255, 0.6), 
                 0 0 30px rgba(69, 243, 255, 0.3); 
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); 
 }
 
-/* Klik Effect */
+
 .btn-link:active {
     transform: translateY(-1px);
     box-shadow: 0 0 8px rgba(69, 243, 255, 0.5);
 }
 
-/* Footer Styling */
+
 .footer {
     position: absolute;
     bottom: 20px;
@@ -129,7 +129,7 @@ body {
     color: #45f3ff; 
 }
 
-/* --- ANIMASI SALJU JATOH (CSS ONLY) --- */
+
 .snowflake {
     color: #fff;
     font-size: 1em;
@@ -137,7 +137,7 @@ body {
     text-shadow: 0 0 5px #000;
     position: fixed;
     top: -10%;
-    z-index: 2; /* Ditaruh di atas background overlay */
+    z-index: 2; 
     user-select: none;
     cursor: default;
     animation-name: snowflakes-fall, snowflakes-shake;
@@ -147,7 +147,7 @@ body {
     opacity: 0.6;
 }
 
-/* Variasi posisi, delay, dan ukuran salju */
+
 .snowflake:nth-of-type(1) { left: 10%; animation-delay: 0s, 0s; }
 .snowflake:nth-of-type(2) { left: 25%; animation-delay: 1.5s, 1s; font-size: 0.8em; }
 .snowflake:nth-of-type(3) { left: 40%; animation-delay: 6s, 0.5s; font-size: 1.1em; }
